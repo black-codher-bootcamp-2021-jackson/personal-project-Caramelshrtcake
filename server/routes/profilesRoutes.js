@@ -8,6 +8,8 @@ const profileRoutes = (app) => {
     return res.status(200).send(profiles);
   });
 
+  app.post(`/api/profile/users`,)
+
   app.post(`/api/profile`, async (req, res) => {
     const profile = await Profile.create(req.body);
 
