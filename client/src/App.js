@@ -3,9 +3,15 @@ import axios from "axios";
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
 import {userLogin} from "./services/userService";
+import { BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
+import Home from "./";
+import Login from "./Components/Login";
+import About from "./Components/About";
+import createAccount from "./Components/createAccount";
+
 
 function App() {
-  // user, setUser, userState===useState
+    // user, setUser, userState===useState
   const [profiles, setProfiles] = useState(null);
 // //////////////////////async function await makes the requests wait instead for the response
   useEffect(() => {
@@ -18,6 +24,10 @@ function App() {
 
     getProfiles();
   }, [profiles]);
+// null when app starts there will be no user, setUser is where we make changes to the variable 
+  const [user, setUser] = useState(null);
+
+
 
 const onSubmit=async(event) =>{
   event.preventDefault()
@@ -26,10 +36,14 @@ const data={identifier:event.target.elements.username.value, password:event.targ
 
 }
 const response=await userLogin(data)
+if(response.signedIn)
+{
+setUser(response.user)
+}
 console.log(response);
-console.log(data);
-  console.log(event.target.elements);
-  console.log("onSubmit form");
+// console.log(data);
+//   console.log(event.target.elements);
+//   console.log("onSubmit form");
 }
 
 
@@ -42,8 +56,12 @@ console.log(data);
         </h3>
         <p>{user.location}</p>
       </li>
-    );
+       );
+
   };
+
+
+
 
   return (
     // <div>
@@ -56,7 +74,10 @@ console.log(data);
     //   </ul>
     // </div>
     
+
+    
   <div>
+   {user?<p>Signed in as{user.firstname}</p>:null}
   <h1 id="login-header">Login</h1>
   
   <div id="login-error-msg-holder">
@@ -68,6 +89,7 @@ console.log(data);
     <input type="submit" value="Login" id="login-form-submit"/>
     
   </form>
+  
 </div>
 
  );
