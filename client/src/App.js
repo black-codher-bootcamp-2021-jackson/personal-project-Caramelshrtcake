@@ -1,69 +1,62 @@
 import React, { useState, useEffect } from "react";
+import MyRoutes from "./Components/Routes"
+import "./App.css";
+import Nav from "./Components/Nav";
+import NavBar from "./Components/NavBar";
 import axios from "axios";
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
 import {userLogin} from "./services/userService";
 import { BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
-import Home from "./";
+import Home from "./Components/Home";
 import Login from "./Components/Login";
 import About from "./Components/About";
-import createAccount from "./Components/createAccount";
+import createAccount from "./Components/CreateAccount";
 
+// import "./Components/styles.css";
+// import YoutubeEmbed from "./Components/YoutubeEmbed";
 
+  
 function App() {
+ 
     // user, setUser, userState===useState
-  const [profiles, setProfiles] = useState(null);
-// //////////////////////async function await makes the requests wait instead for the response
-  useEffect(() => {
-    async function getProfiles() {
-      if (!profiles) {
-        const response = await getAllProfiles();
-        setProfiles(response);
-      }
-    }
+//   const [profiles, setProfiles] = useState(null);
+// // //////////////////////async function await makes the requests wait instead for the response
+//   useEffect(() => {
+//     async function getProfiles() {
+//       if (!profiles) {
+//         const response = await getAllProfiles();
+//         setProfiles(response);
+//       }
+//     }
 
-    getProfiles();
-  }, [profiles]);
+//     getProfiles();
+//   }, [profiles]);
 // null when app starts there will be no user, setUser is where we make changes to the variable 
   const [user, setUser] = useState(null);
 
 
 
-const onSubmit=async(event) =>{
-  event.preventDefault()
-  // ////////////////////////////
-const data={identifier:event.target.elements.username.value, password:event.target.elements.password.value,
-
-}
-const response=await userLogin(data)
-if(response.signedIn)
-{
-setUser(response.user)
-}
-console.log(response);
-// console.log(data);
-//   console.log(event.target.elements);
-//   console.log("onSubmit form");
-}
-
-
-  const renderProfile = (user) => {
-    return (
-      <li key={user._id}>
-        <h3>
-          {`${user.first_name} 
-          ${user.last_name}`}
-        </h3>
-        <p>{user.location}</p>
-      </li>
-       );
-
-  };
-
-
-
-
+// passing user through state a 2nd time, calling Login using these props
   return (
+  <>
+    {user ? <p>Signed in as{user.firstname}</p> :<Login user={user} setUser={setUser}/>}
+    <MyRoutes user={user} setUser={setUser} />
+{/* giving routes access to pass in login, */}
+ 
+    </>
+       
+  )
+};
+<Router>
+      <NavBar />
+      <Routes>
+        <Route path='/' exact Component={Home} />
+        <Route path='/About' Component={About} />
+        <Route path='/Login' Component={Login} />
+        <Route path='/createAccount' Component={createAccount} />
+      </Routes>
+    </Router>
     // <div>
     //   <ul>
     //     {profiles && profiles.length > 0 ? (
@@ -73,26 +66,46 @@ console.log(response);
     //     )}
     //   </ul>
     // </div>
-    
+
 
     
-  <div>
-   {user?<p>Signed in as{user.firstname}</p>:null}
-  <h1 id="login-header">Login</h1>
-  
-  <div id="login-error-msg-holder">
-    <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
-  </div>
-<form id="login-form" onSubmit ={onSubmit}>
-    <input type="text" name="username" id="username-field" className="login-form-field" placeholder="Username"/>
-    <input type="password" name="password" id="password-field" className="login-form-field" placeholder="Password"/>
-    <input type="submit" value="Login" id="login-form-submit"/>
-    
-  </form>
-  
-</div>
+//  );
 
- );
-}
+
+// /////////
+
+// const Home = () => {
+//   <div>
+//     <h1>Home PAge</h1>
+//   </div>
+//  <Router>
+  // <div className="Nav">
+  // <Nav />
+  // {/* <Route path="/" /> */}
+  // <Route path="/About" element={About} />
+  // <Route path="/" element={Home} />
+  // <Route exact path="/"Login" element={Login} />
+  // {/* <createAccount /> */}
+  // </div>
+  // </Router>
+  // function appNav(){
+  // <Router>
+  // // <div className="Nav">
+  // // <Nav />
+  // {/* <Route path="/" /> */}
+  // <Route path="/About" element={About} />
+  // <Route path="/" element={Home} />
+  // <Route exact path="/Login" element={Login} />
+  // {/* <createAccount /> */}
+  // </div>
+  // </Router>
+  // /////////////////////below is the emebed for url and demo////////////////
+  //  function embedId (){
+      
+  //   <div className="App">
+  //   <h1>Youtube Embed</h1>
+  //   <YoutubeEmbed embedId="rokGy0huYEA" />
+  // </div>
+  
 
 export default App;
