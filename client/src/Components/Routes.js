@@ -10,7 +10,11 @@ export default function MyRoutes ({user, setUser}){
   
   return (
       <>
+     
         <BrowserRouter>
+        <NavBar user={user} setUser={setUser} />
+        {user ? <p>Signed in as{user.firstname}</p> :null}
+    
           <Routes>
              <Route path="/About" element={<About/>} />
              <Route path="/" element={<Home/>} />

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MyRoutes from "./Components/Routes"
 import "./App.css";
-import Nav from "./Components/Nav";
 import NavBar from "./Components/NavBar";
 import axios from "axios";
 // SERVICES THAT CALL OUR API ENDPOINTS
@@ -40,8 +39,9 @@ function App() {
 // passing user through state a 2nd time, calling Login using these props
   return (
   <>
-    {user ? <p>Signed in as{user.firstname}</p> :<Login user={user} setUser={setUser}/>}
-    <MyRoutes user={user} setUser={setUser} />
+        <MyRoutes user={user} setUser={setUser} />
+      
+        {/* // <Login user={user} setUser={setUser}/>} */}
 {/* giving routes access to pass in login, */}
  
     </>

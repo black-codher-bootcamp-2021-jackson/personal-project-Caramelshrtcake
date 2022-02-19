@@ -1,13 +1,14 @@
 @font-face {
-  font-family: 'Zilla Slab';
+  font-family: "Zilla Slab";
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url('https://fonts.gstatic.com/s/zillaslab/v6/dFanZfeM_74wlPZtksIFaj8CVHaZV3B3Taw.woff2') format('woff2');
+  src: url("https://fonts.gstatic.com/s/zillaslab/v6/dFanZfeM_74wlPZtksIFaj8CVHaZV3B3Taw.woff2")
+    format("woff2");
 }
 
 body {
-background-image: url('/src/Fitnesstracker.png');
+  background-image: url("/src/Fitnesstracker.png");
 }
 .App {
   text-align: center;
@@ -17,8 +18,6 @@ background-image: url('/src/Fitnesstracker.png');
   height: 40vmin;
   pointer-events: none;
 }
-
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -41,27 +40,65 @@ background-image: url('/src/Fitnesstracker.png');
   color: #61dafb;
 }
 
-.navbar {
-  display: flex;
+.NavBar {
+  /* display: flex;
   justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
+  align-items: center; */
+  min-height: 100vh;
   background-color: rgb(27, 206, 206);
   color: rgb(218, 137, 33);
-
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+#Login {
+  color: rgb(255, 255, 255);
+}
+.LoginCircleContainer {
+  background-color: #3365c9;
+  width: 200px;
+  height: 200px;
+  border-radius: 400px;
+  padding: 50px;
+}
+.SubmitButtonContainer {
+  background-color: #3365c9;
+  width: 45px;
+  height: 5px;
+  margin-top: 30px;
+  margin-left: 90px;
+  border-radius: 25px;
+  padding: 20px;
+  text-align: left;
 }
 
-h1,h2{
+h1,
+h2,
+h3,
+p {
   animation-name: wave;
-  font-family: 'Zilla Slab';
+  font-family: "Zilla Slab";
   animation-iteration-count: infinite;
-  height: 100%;
-   width: 100%;
+  width: 100%;
   border-radius: 50%;
   color: azure;
   animation-direction: alternate;
   animation-duration: 8s;
-  animation-timing-function: ease-out;}
+  animation-timing-function: ease-out;
+}
+
+.Cap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  color: azure;
+  font-size: 50px;
+  margin: 0;
+  border: 10px solid #ccc;
+  border-radius: 200px;
+}
 
 @keyframes wave {
   from {
