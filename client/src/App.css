@@ -8,6 +8,7 @@
 }
 
 body {
+  
   background-image: url("/src/Fitnesstracker.png");
 }
 .App {
@@ -39,18 +40,26 @@ body {
 .App-link {
   color: #61dafb;
 }
+/* .Routes {
+  color: azure;
+ 
+} */
 
-.NavBar {
-  /* display: flex;
+.navbarElements {
+  display: flex;
   justify-content: space-around;
-  align-items: center; */
-  min-height: 100vh;
+  align-items: center;
+color:  #3365c9;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* min-height: 100vh;
   background-color: rgb(27, 206, 206);
   color: rgb(218, 137, 33);
   position: sticky;
   top: 0;
-  z-index: 100;
+  color: azure;
+  z-index: 100; */
 }
+
 #Login {
   color: rgb(255, 255, 255);
 }
@@ -75,6 +84,7 @@ body {
 h1,
 h2,
 h3,
+a,
 p {
   animation-name: wave;
   font-family: "Zilla Slab";

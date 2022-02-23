@@ -10,19 +10,20 @@ const NavBar= ({user, setUser}) =>{
 navigate("/Login")
   }
   return (
-  <div>
+  <div className='navbarElements'>
+    {/* <li>
+    <img src="./logo.png" alt="BLC-HER logo"/>
+     </li> */}
     <li>
       <Link to="/">Home</Link>
     </li>
     <li>
-      <Link to="/About">AboutUs</Link>
+      <Link to="/About">About Us</Link>
     </li>
     <li>
     {user ? <a href ="" onClick={logOut}>Log Out</a> : <Link to="/Login">Login</Link> } 
          </li>
-    {/* <li>
-      <Link to="/createAccount">Goats</Link>
-    </li> */}
+         
   </div>
   );
 }

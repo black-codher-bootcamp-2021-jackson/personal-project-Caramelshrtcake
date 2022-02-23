@@ -5,6 +5,8 @@ import Login from "./Login";
 import About from "./About";
 import "../App.css";
 import NavBar from "../Components/NavBar";
+import Demonstrations from "./Demonstrations";
+import Locations from "./Locations";
 
 export default function MyRoutes ({user, setUser}){
   
@@ -16,6 +18,8 @@ export default function MyRoutes ({user, setUser}){
         {user ? <p>Signed in as{user.firstname}</p> :null}
     
           <Routes>
+          <Route path="/demonstrations" element={<Demonstrations/>} />
+          <Route path="/locations" element={<Locations user={user} />} />
              <Route path="/About" element={<About/>} />
              <Route path="/" element={<Home/>} />
              <Route path="/Login" element={<Login user={user} setUser={setUser}/>} />
