@@ -10,10 +10,11 @@ const NavBar= ({user, setUser}) =>{
 navigate("/Login")
   }
   return (
-  <div className='navbarElements'>
-    {/* <li>
-    <img src="./logo.png" alt="BLC-HER logo"/>
-     </li> */}
+      <div className='navbarElements'>
+    <li>
+    <img class="App-logo"img src="/logo.png" alt="BLC-HER logo"/>
+     </li>
+     
     <li>
       <Link to="/">Home</Link>
     </li>

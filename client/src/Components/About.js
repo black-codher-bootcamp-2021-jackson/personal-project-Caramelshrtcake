@@ -2,19 +2,30 @@ import React from "react";
 import "../App.css";
 
 
-
 const About = () => {
     return (
-        <div>
+        <div className="AboutUsPage">
           <h1>About US Page</h1>
-          <h3>As I sat in my coding boot-camp my partner mentioned wanting to know what the occupancy was at the gym, it gave me a thought that actually for my local 
-              sweat box maybe I could create something that would work, after some thought I went on my way to planning how to accomplish this, 
-              I then thought about "CAP" the capacity app that is transferable in all areas of life, with the pandemic restrictions imposed it seemed like a suitable app to have.
+          <header>As I sat in my coding boot-camp my partner mentioned wanting to know the occupancy at the gym, after some thought I went onto planning how to accomplish this with my local sweat box in mind.
+              CAP was then created,  
+         the capacity app that is transferable in all areas of life.
 
-              Established in 2022, not complete but a work in progress, Created with you in mind. </h3>
-        </div>
+              Established in 2022, not complete but a work in progress, created with you in mind. </header>
+ <>
+ </>
+    <div className="footer">
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-pinterest"></a>
+    <a href="#" class="fa fa-snapchat-ghost"></a>
+    <a href="#" class="fa fa-skype"></a>
+    </div>
+ </div>
     
     );
+    
 };
+
 
 export default About;

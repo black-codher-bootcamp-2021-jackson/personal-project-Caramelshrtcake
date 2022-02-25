@@ -14,11 +14,11 @@ function Demonstrations(){
     },[demonstrations]);
   /* check both exsits set to true then show demo */
     return(
-             <>
-             <div> Demonstrations</div>
+             <div className="demos">
+             <h4> Demonstrations</h4>
          {(demonstrations) &&
         demonstrations.map((item) => <YoutubeEmbed youtubeUrl={item.uri} />)}
- </>
+ </div>
 
     )
 }

@@ -23,9 +23,10 @@ function Locations({ user }) {
     }
   }, [locations]);
   /* check both exsits set to true then show demo */
+  
   return (
     <>
-      <div> locations</div>
+      <h4> Locations</h4>
       {locations &&
         locations.map((item) => {
           if(user.userPrefrences.startsWith(item.type)){
@@ -35,7 +36,7 @@ function Locations({ user }) {
             <>
               <p> {item.city}</p>
               <p>{item.town}</p>
-              <p>{item.capacity}</p>
+              <p>{item.capacity}%</p>
             </>
           );}
         })}

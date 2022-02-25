@@ -6,8 +6,8 @@ export const YoutubeEmbed = ({ youtubeUrl }) => {
   return (
     <div className="video-responsive">
       <iframe
-        width="853"
-        height="480"
+        width="500"
+        height="300"
         // src={`https://www.youtube.com/watch?v=BQu26ABuVS0/${embedId}`}
           src={`https://www.youtube.com/embed/${embedId}`}
         frameBorder="0"
