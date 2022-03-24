@@ -11,9 +11,7 @@ navigate("/Login")
   }
   return (
       <div className='navbarElements'>
-    <li>
-    <img class="App-logo"img src="/logo.png" alt="BLC-HER logo"/>
-     </li>
+        
      
     <li>
       <Link to="/">Home</Link>

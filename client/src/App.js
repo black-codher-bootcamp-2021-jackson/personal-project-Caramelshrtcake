@@ -12,6 +12,7 @@ import Login from "./Components/Login";
 import About from "./Components/About";
 import createAccount from "./Components/CreateAccount";
 
+
 // import "./Components/styles.css";
 // import YoutubeEmbed from "./Components/YoutubeEmbed";
 
@@ -48,15 +49,7 @@ function App() {
        
   )
 };
-<Router>
-      <NavBar />
-      <Routes>
-        <Route path='/' exact Component={Home} />
-        <Route path='/About' Component={About} />
-        <Route path='/Login' Component={Login} />
-        <Route path='/createAccount' Component={createAccount} />
-      </Routes>
-    </Router>
+
     // <div>
     //   <ul>
     //     {profiles && profiles.length > 0 ? (

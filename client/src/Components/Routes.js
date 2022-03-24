@@ -14,8 +14,11 @@ export default function MyRoutes ({user, setUser}){
       <>
      
         <BrowserRouter>
+        <div className="App-Header">  <img class="App-logo"img src="/logo.png" alt="BLC-HER logo"/>
+        <div className="Menu-Container"> <a href="">Menu</a> </div>
         <NavBar user={user} setUser={setUser} />
-        {user ? <p>Signed in as{user.firstname}</p> :null}
+    </div>
+               {user ? <p>Signed in as{user.firstname}</p> :null}
     
           <Routes>
           <Route path="/demonstrations" element={<Demonstrations/>} />

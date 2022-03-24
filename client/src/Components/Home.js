@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
     const navigate = useNavigate()
    return (
-    <div className="HomePage">
+    <div className="Home">
        <h3>Home Page</h3>
       <header>
       Welcome to the wonderful CAP APP,
